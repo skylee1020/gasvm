@@ -1,0 +1,28 @@
+package ga;
+
+// Decompiled by DJ v2.3.3.38 Copyright 2000 Atanas Neshkov  Date: 2004-10-04 ¿ÀÈÄ 9:11:40
+// Home Page : http//members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   ga.Expression.java
+
+
+class AbsExpressionNode
+    implements ExpressionNode
+{
+
+    public AbsExpressionNode(ExpressionNode expressionnode)
+    {
+        next = expressionnode;
+    }
+
+    public double value(double d, double d1)
+    {
+        double d2 = next.value(d, d1);
+        if(d2 < 0.0D)
+            return -d2;
+        else
+            return d2;
+    }
+
+    private ExpressionNode next;
+}
